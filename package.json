@@ -1,0 +1,22 @@
+{
+  "name": "node-tutorial",
+  "version": "1.0.0",
+  "description": "A node express tutorial",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hennersz/nodeTutorial.git"
+  },
+  "author": "Henry Mortimer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hennersz/nodeTutorial/issues"
+  },
+  "homepage": "https://github.com/hennersz/nodeTutorial#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
