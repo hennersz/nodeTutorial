@@ -16,6 +16,10 @@ app.get('/', function (req, res) {
   res.render('index', {title: 'A cool Title', message: 'This is a message from space'});
 });
 
+app.get('/numbers/:number', function(req, res){
+  res.send(Math.floor(Math.random() * req.params.number).toString());
+});
+
 app.use(function(req, res, next){
   var err = new Error('Not found');
   err.status = 404;
