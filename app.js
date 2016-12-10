@@ -1,6 +1,11 @@
 var express = require('express');
 var app = express();
 
+app.set('views', './views');
+app.set('view engine', 'pug');
+
+app.use(express.static('public'));
+
 app.use(function(req, res, next){
   var d = new Date();
   console.log('Request Received at: ' + d.toString());
@@ -8,7 +13,7 @@ app.use(function(req, res, next){
 });
 
 app.get('/', function (req, res) {
-  res.send('Hello World!');
+  res.render('index', {title: 'A cool Title', message: 'This is a message from space'});
 });
 
 app.use(function(req, res, next){
