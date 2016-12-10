@@ -1,11 +1,14 @@
 var express = require('express');
 var app = express();
 var request = require('request');
+var bodyParser = require('body-parser');
 
 app.set('views', './views');
 app.set('view engine', 'pug');
 
 app.use(express.static('public'));
+
+app.use(bodyParser.urlencoded());
 
 app.use(function(req, res, next){
   var d = new Date();
@@ -37,6 +40,15 @@ app.get('/displayUser/:user', function(req,res, next){
       next(err);
     }
   })
+});
+
+app.get('/form', function(req, res){
+  res.render('form');
+})
+
+app.post('/form', function(req, res){
+  console.log(req.body)
+  res.render('form');
 });
 
 
