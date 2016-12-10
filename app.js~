@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var request = require('request');
 
 app.set('views', './views');
 app.set('view engine', 'pug');
@@ -16,9 +17,28 @@ app.get('/', function (req, res) {
   res.render('index', {title: 'A cool Title', message: 'This is a message from space'});
 });
 
+
 app.get('/numbers/:number', function(req, res){
-  res.send(Math.floor(Math.random() * req.params.number));
+  res.send(Math.floor(Math.random() * req.params.number).toString());
 });
+
+
+app.get('/displayUser', function(req,res, next){
+  request({
+    url:'https://api.github.com/users/hennersz',
+    headers: {
+      'User-Agent':'hennersz'
+    }
+  }, function(err, response, body){
+    if(!err && response.statusCode === 200){
+      obj = JSON.parse(body);
+      res.render('displayUser', obj);
+    } else {
+      next(err);
+    }
+  })
+});
+
 
 app.use(function(req, res, next){
   var err = new Error('Not found');

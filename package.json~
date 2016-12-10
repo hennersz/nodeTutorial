@@ -4,16 +4,20 @@
   "description": "A node express tutorial",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hennersz/nodeTutorial.git"
   },
-  "author": "",
+  "author": "Henry Mortimer",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/hennersz/nodeTutorial/issues"
   },
-  "homepage": "https://github.com/hennersz/nodeTutorial#readme"
+  "homepage": "https://github.com/hennersz/nodeTutorial#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "pug": "^2.0.0-beta6",
+  }
 }

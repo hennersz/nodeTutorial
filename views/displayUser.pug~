@@ -1,0 +1,13 @@
+html
+  head
+    title Look at github users
+    link(rel="stylesheet" href="https://unpkg.com/purecss@0.6.0/build/pure-min.css")
+    link(rel="stylesheet" href="/css/style.css")
+  body
+    div(class="pure-g centeredText")
+      div(class="pure-u-1")
+        h1 #{login} - #{name}
+        img(src=avatar_url)
+        p Public Repositories: #{public_repos}
+
+
